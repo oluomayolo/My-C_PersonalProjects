@@ -1,0 +1,40 @@
+#include <stdio.h>
+int main()
+{
+    char sign;
+    double firstnum, secondnum;
+    printf(">>>>>>SIMPLE CALCULATOR<<<<<<<<\n");
+    printf("------------------------------------\n");
+    printf("enter sign to evaluate ( +, -, *, /) : \n");
+    printf("------------------------------------\n");
+    scanf("%c", &sign);
+    printf("\neneter the two numbers one by one : ");
+    scanf("%lf %lf",&firstnum,&secondnum);
+
+    switch (sign)
+    {
+    case '+':
+        printf("%.2lf + %.2lf = %.2lf",firstnum,secondnum,(firstnum+secondnum));
+        break;
+
+        case '-':
+        printf("%.2lf - %.2lf = %.2lf",firstnum,secondnum,(firstnum-secondnum));
+        break;
+    
+    case '*':
+        printf("%.2lf * %.2lf = %.2lf",firstnum,secondnum,(firstnum*secondnum));
+        break;
+
+    case '/':
+        if( secondnum != 0.0 )
+        printf("%.2lf / %.2lf = %.2lf",firstnum,secondnum,(firstnum/secondnum));
+        else
+        printf("divide by zero situation");
+        break;
+    default:
+        printf("invalid operator");
+        break;
+    }
+    return 0;
+}
+
